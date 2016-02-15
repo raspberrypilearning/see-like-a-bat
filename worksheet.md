@@ -8,7 +8,11 @@ Chances are that the vibration motor you have purchased (or scavenged) will have
 
 1. Take your vibration motor and secure it in place.
 
+![vibration motor](images/vibration_motor.png)
+
 1. Use the tip of your soldering iron to heat up the ends of the leads, coming from the soldering iron and then apply a little solder to both leads, so they become coated in the solder. This is known as tinning.
+
+![vibration motor](images/vibration_motor2.png)
 
 1. Take about 60cm of red and black multi-core wire, and strip the insulating plastic from the ends of each.
 
@@ -16,7 +20,11 @@ Chances are that the vibration motor you have purchased (or scavenged) will have
 
 1. Secure your vibration motor once again, then touch the leads to the multi-core wire and apply a little heat to melt the solder they are tinned with. They should join together and form a secure bond.
 
+![vibration motor](images/vibration_motor3.png)
+
 1. Use some insulating tape or heat-shrink to wrap both wires.
+
+![vibration motor](images/vibration_motor_photo.jpg)
 
 ## Testing the vibration motor.
 
@@ -30,6 +38,8 @@ You're now going to need to test your soldering (or twisting).
 
 1. Place the black lead into any Gnd pin.
 
+![testing vibro](images/testing_vibro-bb.png)
+
 _It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a transistor._
 
 The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
@@ -39,6 +49,8 @@ The motor should start vibrating, at which point you can disconnect it from your
 An Ultrasonic distance sensor works using ultrasound. This is sound with a frequency so high, that humans are unable to hear it. Bats and Dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
 
 The Ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
+
+![uds](images/uds.png)
 
 By knowing the time between burst and echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
 
@@ -77,7 +89,7 @@ print('The resistor you need is approximately',R2)
 
 The resistor needed is only a rough guide. (Remember we actually only need a voltage above 1.8V to get a logical high on a GPIO pin).
 
-## Wiring the Ultrasonic Distance Sensor (USD).
+## Wiring the Ultrasonic Distance Sensor (UDS).
 
 1. The next stage is to set up and test the Ultrasonic Distance Sensor (UDS). This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
 
@@ -89,10 +101,10 @@ The resistor needed is only a rough guide. (Remember we actually only need a vol
 
 The diagram below show you the complete setup.
 
-![breadboard UDS](images/testing-usd_bb.png)
+![breadboard UDS](images/testing-uds_bb.png)
 
 ## Testing the Ultrasonic Distance Sensor.
-1. You now need to make sure the USD is working correctly.
+1. You now need to make sure the UDS is working correctly.
 1. You'll need a little bit of Python 3 code to do this, so open up IDLE and create a new file called bat.py
 1. You're going to use gpiozero to code this, but the ultrasonic distance sensor isn't in the library yet. Not to worry though, you can use the default InputDevice and OutputDevice instead.
 
@@ -219,7 +231,7 @@ The diagram below show you the complete setup.
 
 1. You can now add your vibration motor to GPIO 14 and a ground pin.
 
-![vibro and UDS](images/usd_vibro_bb.png)
+![vibro and UDS](images/uds_vibro_bb.png)
 
 1. You want to drive the motor using Pulse Width Modulation (PWM). This will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14
 
