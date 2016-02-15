@@ -1,8 +1,17 @@
-- name: Raspberry Pi camera module
-  img: camera
+- name: Ultrasonic distance sensor
+  img: ultrasonic
+- name: Vibration Motor
+  img: vibration-motor
+- name: 1 1.2kΩ Resistor (or other - see worksheet)
+  img: 1.2k
+- name: 1 2.2kΩ Resistor (or other - see worksheet)
+  img: 2.2k
 - name: 1 x Solderless breadboard
   img: breadboard
-- name: 2 x Male-to-female jumper leads
+- name: 6 x Male-to-female jumper leads
   img: jumper-male-to-female
-- name: 1 x Tactile button
-  img: tactile-push-button
+- name: 2 x Male-to-memale jumper leads
+  img: jumper-male-to-male
+- name: 6 x Female-to-female jumper leads
+  img: jumper-female-to-female
+
