@@ -4,17 +4,17 @@ In this resource you're going to make your very own echolocation system, allowin
 
 ## Adding _flying leads_ to the vibration motor.
 
-Chances are that the vibration motor you have purchased (or scavenged) will have a pair of _very_ short leads running from it. So te first thing you need to do is to attach some longer leads. This is easiest carried out by using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
+Chances are that the vibration motor you have purchased (or scavenged) will have a pair of _very_ short leads running from it. So the first thing you need to do is to attach some longer leads. This is easiest carried out by using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
 
 1. Take your vibration motor and secure it in place.
 
 1. Use the tip of your soldering iron to heat up the ends of the leads, coming from the soldering iron and then apply a little solder to both leads, so they become coated in the solder. This is known as tinning.
 
-1. Take about 60cm of red and black multicore wire, and strip the insulating plastic from the ends of each.
+1. Take about 60cm of red and black multi-core wire, and strip the insulating plastic from the ends of each.
 
-1. Now tin the ends of your multicore wire.
+1. Now tin the ends of your multi-core wire.
 
-1. Secure your vibration motor once again, then touch the leads to the multicore wire and apply a little heat to melt the solder they are tinned with. They should join together and form a secure bond.
+1. Secure your vibration motor once again, then touch the leads to the multi-core wire and apply a little heat to melt the solder they are tinned with. They should join together and form a secure bond.
 
 1. Use some insulating tape or heat-shrink to wrap both wires.
 
@@ -22,7 +22,7 @@ Chances are that the vibration motor you have purchased (or scavenged) will have
 
 You're now going to need to test your soldering (or twisting).
 
-1. Twist the free ends of the multicore wire so they become fairly rigit.
+1. Twist the free ends of the multi-core wire so they become fairly rigid.
 
 1. Insert these ends into female-female jumper leads.
 
@@ -45,22 +45,22 @@ By knowing the time between burst and echo, and the speed of sound, you can calc
 An Ultrasonic distance sensor has 4 pins.
 
 ```
-Vcc is the pin that powers the device. It needs 5V to work.
-Trig is the pin that sends out the burst. It can be triggered using 3.3V.
-Echo is the pin that outputs when the reflectd sound is received. It outputs at 5V.
-Gnd is the ground pin, used to complete the circuit.
+1. Vcc is the pin that powers the device. It needs 5V to work.
+2. Trig is the pin that sends out the burst. It can be triggered using 3.3V.
+3. Echo is the pin that outputs when the reflected sound is received. It outputs at 5V.
+4. Gnd is the ground pin, used to complete the circuit.
 ```
 
-Here we have a problem. The Echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So inorder not to fry the Pi, you're going to have to reduce that output voltage.
+Here we have a problem. The Echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So in order not to fry the Pi, you're going to have to reduce that output voltage.
 
 ## Potential Dividers.
 
 1. A potential divider can split a voltage into two smaller voltages. It does this by using resistors.
-1. Look at the diagram below. It shows a singal resistor connected to 5V. The voltage across the resistor is 5V
+1. Look at the diagram below. It shows a signal resistor connected to 5V. The voltage across the resistor is 5V
 ![single-resistor](images/single-res.jpg)
-1. Now look at this diagram. By using two resitors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
+1. Now look at this diagram. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
 ![same-resistor](images/same-res.jpg)
-1. By altering the resistors, we can taylor the voltage across any one of them to be anything we like.
+1. By altering the resistors, we can tailor the voltage across any one of them to be anything we like.
 1. Here you can see that we have split the voltage to give us almost exactly 3.3V
 ![divider](images/divider.jpg)
 1. To work out the resistors you need, you can use the code below. Or you can just use the resistances in the rest of this guide.
@@ -68,7 +68,7 @@ Here we have a problem. The Echo pin is going to output 5V, but your Raspberry P
 ```python
 R1 = 1200 # The smaller of the two resistors (alter this)
 Vout = 3.3 # The voltage you are trying to achieve (always 3.3)
-Vin = 5 # The input voltage (alway 5)
+Vin = 5 # The input voltage (always 5)
 
 R2 = (Vout * R1) / (Vin - Vout) 
 
@@ -79,7 +79,7 @@ The resistor needed is only a rough guide. (Remember we actually only need a vol
 
 ## Wiring the Ultrasonic Distance Sensor (USD).
 
-1. The next stage is to set up and test the Ultrasonic Distance Sensor (UDS). This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidently short the Pi, you might have issues.
+1. The next stage is to set up and test the Ultrasonic Distance Sensor (UDS). This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
 
 1. You can start by connecting the 5V pin on the Pi, into the VCC pin on the UDS.
 1. The Trig pin on the UDS, can go straight into GPIO 4.
@@ -89,12 +89,12 @@ The resistor needed is only a rough guide. (Remember we actually only need a vol
 
 The diagram below show you the complete setup.
 
-![breadboad usd](images/testing-usd_bb.png)
+![breadboard UDS](images/testing-usd_bb.png)
 
 ## Testing the Ultrasonic Distance Sensor.
 1. You now need to make sure the USD is working correctly.
 1. You'll need a little bit of Python 3 code to do this, so open up IDLE and create a new file called bat.py
-1. You're going to use gpiozero to code this, but the ultrasonic distance sensor isn't in the library yet. Not to worry though, you can use the default InputDevice and OutputDevice intead.
+1. You're going to use gpiozero to code this, but the ultrasonic distance sensor isn't in the library yet. Not to worry though, you can use the default InputDevice and OutputDevice instead.
 
 	```python
 	from gpiozero import InputDevice, OutputDevice
@@ -157,7 +157,7 @@ The diagram below show you the complete setup.
 
 	![speed](images/speed.png)
 
-1. This can be rearanged to make:
+1. This can be rearranged to make:
 
 	![distance](images/distance.png)
 
@@ -174,7 +174,8 @@ The diagram below show you the complete setup.
 		speed = 343
 		distance = speed * duration / 2 # calculate distance in metres
 		return distance
-		```
+	```
+		
 1. Now to test it's all working we can add an infinite loop at the bottom of the script. You full code listing should now look like this:
 
 	```python
@@ -213,3 +214,59 @@ The diagram below show you the complete setup.
 
     ```
 1. Run your code and you should see a stream of numbers, showing you the distance from the sensor in metres. Move your hand closer and further from the distance sensor.
+
+## Adding the Vibration Motor.
+
+1. You can now add your vibration motor to GPIO 14 and a ground pin.
+
+![vibro and UDS](images/usd_vibro_bb.png)
+
+1. You want to drive the motor using Pulse Width Modulation (PWM). This will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14
+
+	```python
+	from gpiozero import InputDevice, OutputDevice, PWMOutputDevice
+	from time import sleep, time
+
+	trig = OutputDevice(4)
+	echo = InputDevice(17)
+	motor = PWMOutputDevice(14)
+
+	sleep(2)
+
+    ```
+
+1. A `PWMOutputDevice` needs a floating point number between 0 and 1. So you need to remap the distance to a value between 0 and 1. At a maximum of 4m you want a value of 0, while at a distance of 2cm you want a value of 1.
+
+1. You can remap the maximum and minimum distances to minimum and maximum values using the equation below.
+
+	![equation1](images/equation1.png)
+
+1. Now we can plug in the maximum and minimums.
+   ![equation2](images/equation2.png)
+
+1. And finally simplify the equation a little.
+   ![equation3](images/equation3.png)
+
+1. Turning this into a Python function you get:
+
+	```python
+	def calculate_vibration(distance):
+		vibration = (((distance - 0.02) * -1) / (4 - 0.02)) + 1
+		return vibration
+
+	```
+
+1. Now finally, you can alter your `while` loop to drive the motor
+
+	```python
+	while True:
+		duration = get_pulse_time()
+		distance = calculate_distance(duration)
+		vibration = calculate_vibration(distance)
+		motor.value = vibration
+
+	```
+1. Run the code and move your hand closer and further away from the sensor. The motor should vibrate in accordance with the distance your hand is.
+
+## Taking it further
+Now move on to [worksheet 2](worksheet2.md) to learn how to incorporate all of this into a wearable device.
