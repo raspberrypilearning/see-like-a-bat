@@ -12,13 +12,13 @@ In this next section, you're going to incorporate your device into a glove, to a
 
     ![t join](images/t_join.jpg)
 
-1. The lead that joins to the smaller of the two resistors, needs to go into the `Echo` pin on the Ultrasonic distance sensor.
+	```
+	1. The lead that joins to the smaller of the two resistors, needs to go into the Echo pin on the Ultrasonic distance sensor.
+	1. The lead that branches out from between the sensors must go into GPIO 17
+	1. The lead that comes out of the larger of the two resistors must go into a Gnd pin on the Raspberry Pi.
+	1. All the other connections are the same as the previous setup.
 
-1. The lead that branches out from between the sensors must go into GPIO 17
-
-1. The lead that comes out of the larger of the two resistos must go into a Gnd pin on the Raspberry Pi.
-
-1. All the other connections are the same as the previous setup.
+	```
 
 1. Header leads also need attaching to the vibration motor.
 
@@ -42,15 +42,15 @@ To finish off you can make your device into a wearable.
 
 1. Sew or glue the ultrasonic distance sensor to the palm side of a glove.
 
-![ultra and glove](images/glove_uds.jpg)
+	![ultra and glove](images/glove_uds.jpg)
 
 1. Sew or glue the vibration motor to the inside of the glove, so it rests on the palm
 
-![motor and glove](images/glove_motor.jpg)
+	![motor and glove](images/glove_motor.jpg)
 
 1. Place the Raspberry Pi or Pizero up your along with a battery, and secure it in place with a wrist band.
 
-![modelled](images/modelled.png)
+	![modelled](images/modelled.png)
 
 1. Now you should be able to hold up your hand and detect objects that come close to you, or that you come close to.
 
@@ -60,4 +60,4 @@ To finish off you can make your device into a wearable.
 
 2. Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device _more_ sensitive at closer distances?
 
-3. Why not sew an ultrasonic into the colar of a jacket, so you can detect when someone is sneaking up on you from behind?
+3. Why not sew an ultrasonic into the collar of a jacket, so you can detect when someone is sneaking up on you from behind?
