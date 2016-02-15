@@ -1,9 +1,9 @@
 from gpiozero import InputDevice, OutputDevice, PWMOutputDevice
 from time import sleep, time
 
-trig = OutputDevice(17)
-echo = InputDevice(4)
-vibro = PWMOutputDevice(14)
+trig = OutputDevice(4)
+echo = InputDevice(17)
+motor = PWMOutputDevice(14)
 
 sleep(2)
 
@@ -19,6 +19,7 @@ def get_pulse_time():
         pulse_end = time()
 
     sleep(0.06)
+
     return pulse_end - pulse_start
 
 def calculate_distance(duration):
@@ -26,19 +27,13 @@ def calculate_distance(duration):
     distance = speed * duration / 2
     return distance
 
-def indicate(distance):
+def calculate_vibration(distance):
     vibration = (((distance - 0.02) * -1) / (4 - 0.02)) + 1
-    try:
-        vibro.value = vibration
-        print(distance)
-    except:
-        pass
+    return vibration
 
-for i in range(1000):
+while True:
     duration = get_pulse_time()
     distance = calculate_distance(duration)
-    indicate(distance)
-
-trig.close()
-echo.close()
-vibro.close()
+    vibration = calculate_vibration(distance)
+    motor.value = vibration
+    
