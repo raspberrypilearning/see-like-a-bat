@@ -24,7 +24,7 @@ In the second section of this worksheet, you're going to incorporate your device
 
 1. Lastly you can connect it all to either your Raspberry Pi, or, even better, to a Pizero.
 
-	![pizero setup](images/pizero_setup.png)
+	![pizero setup](images/pizero_setup.jpg)
 
 1. This wiring diagram may help you.
 
