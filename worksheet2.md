@@ -38,7 +38,7 @@ In the second section of this worksheet, you're going to incorporate your device
 
 To finish off you can make your device into a wearable.
 
-1. Sew or glue the ultrasonic distance sensor to the palm side of a glove.
+1. Sew or glue the UDS to the palm side of a glove.
 
 	![ultra and glove](images/glove_uds.jpg)
 
@@ -52,9 +52,9 @@ To finish off you can make your device into a wearable.
 
 1. Now you should be able to hold up your hand and detect objects that come close to you, or that you come close to.
 
-## Taking it further
+## What next?
 
-1. Why not make a second one, so that you can have a pair of gloves and have binocular bat vision?
+1. Why not make a second UDS device, so that you can have a pair of gloves and have binocular bat vision?
 
 2. Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device more sensitive at closer distances?
 
