@@ -1,18 +1,18 @@
 # See like a bat
 
-In this resource you're going to make your very own echolocation system, allowing you to _see_ in the dark.
+In this resource you're going to make your very own echolocation system, allowing you to see in the dark.
 
-## Adding _flying leads_ to the vibration motor.
+## Adding flying leads to the vibration motor.
 
-Chances are that the vibration motor you have purchased (or scavenged) will have a pair of _very_ short leads running from it. So the first thing you need to do is to attach some longer leads. This is easiest carried out by using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
+The chances are that the vibration motor you have purchased (or scavenged) will have a pair of very short leads running from it. So the first thing you need to do is to attach some longer leads. This is easiest carried out by using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
 
 1. Take your vibration motor and secure it in place.
 
-![vibration motor](images/vibration_motor.png)
+	![vibration motor](images/vibration_motor.png)
 
 1. Use the tip of your soldering iron to heat up the ends of the leads, coming from the soldering iron and then apply a little solder to both leads, so they become coated in the solder. This is known as tinning.
 
-![vibration motor](images/vibration_motor2.png)
+	![vibration motor](images/vibration_motor2.png)
 
 1. Take about 60cm of red and black multi-core wire, and strip the insulating plastic from the ends of each.
 
@@ -24,7 +24,7 @@ Chances are that the vibration motor you have purchased (or scavenged) will have
 
 1. Use some insulating tape or heat-shrink to wrap both wires.
 
-![vibration motor](images/vibration_motor_photo.jpg)
+	![vibration motor](images/vibration_motor_photo.jpg)
 
 ## Testing the vibration motor.
 
@@ -36,13 +36,14 @@ You're now going to need to test your soldering (or twisting).
 
 1. Place the red lead into the 3V3 output on your Raspberry Pi
 
-1. Place the black lead into any Gnd pin.
+1. Place the black lead into any Ground pin.
 
-![testing vibro](images/testing-vibro_bb.png)
+	![testing vibro](images/testing-vibro_bb.png)
 
-_It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a transistor._
+	It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors 	should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a
+	transistor.
 
-The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
+	The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
 
 ## How an Ultrasonic distance sensor works
 
@@ -50,7 +51,7 @@ An Ultrasonic distance sensor works using ultrasound. This is sound with a frequ
 
 The Ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
 
-![uds](images/uds.png)
+	![uds](images/uds.png)
 
 By knowing the time between burst and echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
 
@@ -69,12 +70,12 @@ Here we have a problem. The Echo pin is going to output 5V, but your Raspberry P
 
 1. A potential divider can split a voltage into two smaller voltages. It does this by using resistors.
 1. Look at the diagram below. It shows a signal resistor connected to 5V. The voltage across the resistor is 5V
-![single-resistor](images/single-res.jpg)
+	![single-resistor](images/single-res.jpg)
 1. Now look at this diagram. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
-![same-resistor](images/same-res.jpg)
+	![same-resistor](images/same-res.jpg)
 1. By altering the resistors, we can tailor the voltage across any one of them to be anything we like.
 1. Here you can see that we have split the voltage to give us almost exactly 3.3V
-![divider](images/divider.jpg)
+	![divider](images/divider.jpg)
 1. To work out the resistors you need, you can use the code below. Or you can just use the resistances in the rest of this guide.
 
 ```python
@@ -231,7 +232,7 @@ The diagram below show you the complete setup.
 
 1. You can now add your vibration motor to GPIO 14 and a ground pin.
 
-![vibro and UDS](images/uds_vibro_bb.png)
+	![vibro and UDS](images/uds_vibro_bb.png)
 
 1. You want to drive the motor using Pulse Width Modulation (PWM). This will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14
 
