@@ -4,13 +4,13 @@ In this resource you're going to make your very own echolocation system, allowin
 
 ## Adding flying leads to the vibration motor.
 
-The chances are that the vibration motor you have purchased (or scavenged) will have a pair of very short leads running from it. So the first thing you need to do is to attach some longer leads. This is easiest carried out by using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
+The chances are that the vibration motor you have purchased (or scavenged) will have a pair of very short leads running from it. So the first thing you need to do is to attach some longer leads. This is usually easiest to carry out using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
 
 1. Take your vibration motor and secure it in place.
 
 	![vibration motor](images/vibration_motor.png)
 
-1. Use the tip of your soldering iron to heat up the ends of the leads, coming from the soldering iron and then apply a little solder to both leads, so they become coated in the solder. This is known as tinning.
+1. Use the tip of your soldering iron to heat up the ends of the leads, and then apply a little solder to both leads, so they become coated in the solder. This is known as tinning.
 
 	![vibration motor](images/vibration_motor2.png)
 
@@ -20,7 +20,7 @@ The chances are that the vibration motor you have purchased (or scavenged) will 
 
 1. Secure your vibration motor once again, then touch the leads to the multi-core wire and apply a little heat to melt the solder they are tinned with. They should join together and form a secure bond.
 
-![vibration motor](images/vibration_motor3.png)
+	![vibration motor](images/vibration_motor3.png)
 
 1. Use some insulating tape or heat-shrink to wrap both wires.
 
@@ -34,9 +34,9 @@ You're now going to need to test your soldering (or twisting).
 
 1. Insert these ends into female-female jumper leads.
 
-1. Place the red lead into the 3V3 output on your Raspberry Pi
+1. Place the red lead onto the 3V3 output on your Raspberry Pi
 
-1. Place the black lead into any Ground pin.
+1. Place the black lead onto any ground pin.
 
 	![testing vibro](images/testing-vibro_bb.png)
 
@@ -45,17 +45,17 @@ You're now going to need to test your soldering (or twisting).
 
 	The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
 
-## How an Ultrasonic distance sensor works
+## How an ultrasonic distance sensor works
 
-An Ultrasonic distance sensor works using ultrasound. This is sound with a frequency so high, that humans are unable to hear it. Bats and Dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
+An ultrasonic distance sensor works using ultrasound. This is sound with a frequency so high that humans are unable to hear it. Bats and dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
 
-The Ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
+The ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
 
 	![uds](images/uds.png)
 
-By knowing the time between burst and echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
+By knowing the time between outgoing burst and returning echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
 
-An Ultrasonic distance sensor has 4 pins.
+An ultrasonic distance sensor has 4 pins.
 
 ```
 1. Vcc is the pin that powers the device. It needs 5V to work.
@@ -64,14 +64,14 @@ An Ultrasonic distance sensor has 4 pins.
 4. Gnd is the ground pin, used to complete the circuit.
 ```
 
-Here we have a problem. The Echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So in order not to fry the Pi, you're going to have to reduce that output voltage.
+Here we have a problem. The echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So in order not to fry the Pi, you're going to have to reduce that output voltage.
 
 ## Potential Dividers.
 
 1. A potential divider can split a voltage into two smaller voltages. It does this by using resistors.
 1. Look at the diagram below. It shows a signal resistor connected to 5V. The voltage across the resistor is 5V
 	![single-resistor](images/single-res.jpg)
-1. Now look at this diagram. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
+1. Now look at the diagram below. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
 	![same-resistor](images/same-res.jpg)
 1. By altering the resistors, we can tailor the voltage across any one of them to be anything we like.
 1. Here you can see that we have split the voltage to give us almost exactly 3.3V
@@ -94,11 +94,11 @@ The resistor needed is only a rough guide. (Remember we actually only need a vol
 
 1. The next stage is to set up and test the Ultrasonic Distance Sensor (UDS). This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
 
-1. You can start by connecting the 5V pin on the Pi, into the VCC pin on the UDS.
-1. The Trig pin on the UDS, can go straight into GPIO 4.
+1. You can start by connecting the 5V pin on the Pi into the VCC pin on the UDS.
+1. The Trig pin on the UDS can go straight into GPIO 4.
 1. The Echo pin on the UDS needs to go to your first resistor of the potential divider.
 1. The output of the first resistor of the potential divider needs to go into GPIO 17.
-1. The Gnd from the UDS, can go into any Ground pin on the Raspberry Pi.
+1. The Gnd from the UDS can go into any ground pin on the Raspberry Pi.
 
 The diagram below show you the complete setup.
 
@@ -107,7 +107,7 @@ The diagram below show you the complete setup.
 ## Testing the Ultrasonic Distance Sensor.
 1. You now need to make sure the UDS is working correctly.
 1. You'll need a little bit of Python 3 code to do this, so open up IDLE and create a new file called bat.py
-1. You're going to use gpiozero to code this, but the ultrasonic distance sensor isn't in the library yet. Not to worry though, you can use the default InputDevice and OutputDevice instead.
+1. You're going to use gpiozero to code this, but the UDS isn't in the library yet. Not to worry though: you can use the default InputDevice and OutputDevice instead.
 
 	```python
 	from gpiozero import InputDevice, OutputDevice
@@ -148,14 +148,14 @@ The diagram below show you the complete setup.
 
 	```
 
-1. Next you need to let the ultra sonic sleep for a little bit, and then return the length of time it took for the pulse to be sent and received.
+1. Next you need to let the ultrasonic sleep for a little bit, and then return the length of time it took for the pulse to be sent and received.
 
 	```python
 		sleep(0.06)
 
 		return pulse_end - pulse_start
 	```
-1. To finish off you can test the program by running it and then typing the following in the _interpreter_
+1. To finish off you can test the program by running it and then typing the following in the interpreter
 
 	```python
 	print(get_pulse_time())
