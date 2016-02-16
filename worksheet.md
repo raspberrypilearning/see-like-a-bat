@@ -314,7 +314,7 @@ There are a few reasons you might encounter errors with your script.
 		return vibration
 	```
 
-1. Occasionally a number that the PWMOutpuDevice can't handle might be returned by the `calculate_vibration` function. Another `try/except` in the final loop will handle this.
+1. Occasionally a number that the PWMOutputDevice can't handle might be returned by the `calculate_vibration` function. Another `try/except` in the final loop will handle this.
 
    ```python
    while True:
