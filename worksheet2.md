@@ -1,6 +1,6 @@
 # See like a Bat
 
-In this next section, you're going to incorporate your device into a glove, to allow you to navigate around like a bat!
+In the second section of this worksheet, you're going to incorporate your device into a glove, to allow you to navigate around like a bat!
 
 ## The First Step
 
@@ -13,18 +13,18 @@ In this next section, you're going to incorporate your device into a glove, to a
     ![t join](images/t_join.jpg)
 
 	```
-	1. The lead that joins to the smaller of the two resistors, needs to go into the Echo pin on the Ultrasonic distance sensor.
+	1. The lead that joins to the smaller of the two resistors needs to go into the Echo pin on the UDS.
 	1. The lead that branches out from between the sensors must go into GPIO 17
-	1. The lead that comes out of the larger of the two resistors must go into a Gnd pin on the Raspberry Pi.
+	1. The lead that comes out of the larger of the two resistors must go into a ground pin on the Raspberry Pi.
 	1. All the other connections are the same as the previous setup.
 
 	```
 
-1. Header leads also need attaching to the vibration motor.
+1. Header leads also need to be attached to the vibration motor.
 
     ![vibro with headers](images/vibration_motor_with_jumpers.jpg)
 
-1. Lastly you can connect it all to either your Raspberry Pi, or even better to a Pizero.
+1. Lastly you can connect it all to either your Raspberry Pi, or, even better, to a Pizero.
 
     ![pizero setup](images/pizero_setup.png)
 
@@ -56,8 +56,8 @@ To finish off you can make your device into a wearable.
 
 ## Taking it further
 
-1. Why not make a second one, so that you can have a pair of gloves and have _binocular bat vision_?
+1. Why not make a second one, so that you can have a pair of gloves and have binocular bat vision?
 
-2. Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device _more_ sensitive at closer distances?
+2. Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device more sensitive at closer distances?
 
 3. Why not sew an ultrasonic into the collar of a jacket, so you can detect when someone is sneaking up on you from behind?
