@@ -12,13 +12,11 @@ In the second section of this worksheet, you're going to incorporate your device
 
     ![t join](images/t_join.jpg)
 
-	```
 	1. The lead that joins to the smaller of the two resistors needs to go into the Echo pin on the UDS.
 	1. The lead that branches out from between the sensors must go into GPIO 17
 	1. The lead that comes out of the larger of the two resistors must go into a ground pin on the Raspberry Pi.
 	1. All the other connections are the same as the previous setup.
 
-	```
 
 1. Header leads also need to be attached to the vibration motor.
 
@@ -60,4 +58,4 @@ To finish off you can make your device into a wearable.
 
 2. Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device more sensitive at closer distances?
 
-3. Why not sew an ultrasonic into the collar of a jacket, so you can detect when someone is sneaking up on you from behind?
+3. Why not sew a UDS into the collar of a jacket, so you can detect when someone is sneaking up on you from behind?
