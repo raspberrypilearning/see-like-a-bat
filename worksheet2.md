@@ -24,11 +24,11 @@ In the second section of this worksheet, you're going to incorporate your device
 
 1. Lastly you can connect it all to either your Raspberry Pi, or, even better, to a Pizero.
 
-    ![pizero setup](images/pizero_setup.png)
+	![pizero setup](images/pizero_setup.png)
 
 1. This wiring diagram may help you.
 
-    ![pizero wiring](images/testing-noBB_bb.png)
+	![pizero wiring](images/testing-noBB_bb.png)
 
 1. Run your `bat.py` script to test that everything is working correctly.
 
