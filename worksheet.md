@@ -40,14 +40,13 @@ You're now going to need to test your soldering (or twisting).
 
 	![testing vibro](images/testing-vibro_bb.png)
 
-	It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors 	should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a
-	transistor.
+It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors 	should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a transistor.
 
-	The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
+The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
 
-## How an ultrasonic distance sensor works
+## How an ultrasonic distance sensor (UDS) works
 
-An ultrasonic distance sensor works using ultrasound. This is sound with a frequency so high that humans are unable to hear it. Bats and dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
+An ultrasonic distance sensor (UDS) works using ultrasound. This is sound with a frequency so high that humans are unable to hear it. Bats and dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
 
 The ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
 
@@ -55,7 +54,7 @@ The ultrasonic distance sensor works by sending out a burst of ultrasound. This 
 
 By knowing the time between outgoing burst and returning echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
 
-An ultrasonic distance sensor has 4 pins.
+A UDS has 4 pins.
 
 ```
 1. Vcc is the pin that powers the device. It needs 5V to work.
@@ -90,9 +89,9 @@ print('The resistor you need is approximately',R2)
 
 The resistor needed is only a rough guide. (Remember we actually only need a voltage above 1.8V to get a logical high on a GPIO pin).
 
-## Wiring the Ultrasonic Distance Sensor (UDS).
+## Wiring the UDS.
 
-1. The next stage is to set up and test the Ultrasonic Distance Sensor (UDS). This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
+1. The next stage is to set up and test the UDS. This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
 
 1. You can start by connecting the 5V pin on the Pi into the VCC pin on the UDS.
 1. The Trig pin on the UDS can go straight into GPIO 4.
@@ -180,7 +179,7 @@ The diagram below show you the complete setup.
 
 1. The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-2</sup>.
 
-1. We can write a simple python function to calculate this for us:
+1. We can write a simple Python function to calculate this for us:
 
 	```python
 	def calculate_distance(duration):
@@ -189,7 +188,7 @@ The diagram below show you the complete setup.
 		return distance
 	```
 		
-1. Now to test it's all working we can add an infinite loop at the bottom of the script. You full code listing should now look like this:
+1. Now to test everything is working we can add an infinite loop at the bottom of the script. You full code listing should now look like this:
 
 	```python
 	from gpiozero import InputDevice, OutputDevice
@@ -279,7 +278,7 @@ The diagram below show you the complete setup.
 		motor.value = vibration
 
 	```
-1. Run the code and move your hand closer and further away from the sensor. The motor should vibrate in accordance with the distance your hand is.
+1. Run the code and move your hand closer and further away from the sensor. The motor should vibrate in accordance with the distance your hand is away from it.
 
 ## Debugging your script
 
@@ -307,7 +306,7 @@ There are a few reasons you might encounter errors with your script.
 			return 0.02
     ```
 
-1. The maximum range on the Ultrasonic distance sensor might not reach 4m. The one used in writing this resource never went beyond 2m. You can alter the `calculate_vibration`function to use a different maximum if you like. For instance:
+1. The maximum range on the UDS might not reach 4m. The one used in writing this resource never went beyond 2m. You can alter the `calculate_vibration`function to use a different maximum if you like. For instance:
 
 	```python
 	def calculate_vibration(distance):
