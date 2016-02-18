@@ -28,7 +28,7 @@ In the second section of this worksheet, you're going to incorporate your device
 
 1. This wiring diagram may help you.
 
-	![pizero wiring](images/testing-noBB_bb.png)
+	![pizero wiring](images/images/See_Like_A_Bat_Diagram_7.png)
 
 1. Run your `bat.py` script to test that everything is working correctly.
 

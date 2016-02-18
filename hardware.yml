@@ -1,11 +1,11 @@
 - name: Ultrasonic distance sensor
-  img: ultrasonic
+  img: ultrasonic-distance-sensor
 - name: Vibration Motor
   img: vibration-motor
 - name: 1 1.2kΩ Resistor (or other - see worksheet)
-  img: 1.2k
+  img: resistor-1k2
 - name: 1 2.2kΩ Resistor (or other - see worksheet)
-  img: 2.2k
+  img: resistor-2k2
 - name: 1 x Solderless breadboard
   img: breadboard
 - name: 6 x Male-to-female jumper leads

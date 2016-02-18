@@ -38,7 +38,7 @@ You're now going to need to test your soldering (or twisting).
 
 1. Place the black lead onto any ground pin.
 
-	![testing vibro](images/testing-vibro_bb.png)
+	![testing vibro](images/See_Like_A_Bat_Diagram_1.png)
 
 It is important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors 	should never be attached directly to the pins on your Raspberry Pi, and should instead by attached to a motor-driver or a transistor.
 
@@ -50,7 +50,7 @@ An ultrasonic distance sensor (UDS) works using ultrasound. This is sound with a
 
 The ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
 
-![uds](images/uds.png)
+![uds](images/Ultrasonic_Distance_Sensor.png)
 
 By knowing the time between outgoing burst and returning echo, and the speed of sound, you can calculate the distance an object is away from the sensor.
 
@@ -68,12 +68,12 @@ Here we have a problem. The echo pin is going to output 5V, but your Raspberry P
 
 1. A potential divider can split a voltage into two smaller voltages. It does this by using resistors.
 1. Look at the diagram below. It shows a signal resistor connected to 5V. The voltage across the resistor is 5V
-	![single-resistor](images/single-res.jpg)
+	![single-resistor](images/See_Like_A_Bat_Diagram_2.png)
 1. Now look at the diagram below. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two.
-	![same-resistor](images/same-res.jpg)
+	![same-resistor](images/See_Like_A_Bat_Diagram_3.png)
 1. By altering the resistors, we can tailor the voltage across any one of them to be anything we like.
 1. Here you can see that we have split the voltage to give us almost exactly 3.3V
-	![divider](images/divider.jpg)
+	![divider](images/See_Like_A_Bat_Diagram_4.png)
 1. To work out the resistors you need, you can use the code below. Or you can just use the resistances in the rest of this guide.
 
 ```python
@@ -100,7 +100,7 @@ The resistor needed is only a rough guide. (Remember we actually only need a vol
 
 The diagram below show you the complete setup.
 
-![breadboard UDS](images/testing-uds_bb.png)
+![breadboard UDS](images/See_Like_A_Bat_Diagram_5.png)
 
 ## Testing the Ultrasonic Distance Sensor.
 1. You now need to make sure the UDS is working correctly.
@@ -230,7 +230,7 @@ The diagram below show you the complete setup.
 
 1. You can now add your vibration motor to GPIO 14 and a ground pin.
 
-	![vibro and UDS](images/uds_vibro_bb.png)
+	![vibro and UDS](images/See_Like_A_Bat_Diagram_6.png)
 
 1. You want to drive the motor using Pulse Width Modulation (PWM). This will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14
 
