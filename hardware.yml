@@ -8,9 +8,9 @@
   img: resistor-2k2
 - name: 1 x Solderless breadboard
   img: breadboard
-- name: 6 x Male-to-male jumper leads
+- name: 6 x Male-to-female jumper leads
   img: jumper-male-to-female
-- name: 2 x Male-to-female jumper leads
+- name: 2 x Male-to-male jumper leads
   img: jumper-male-to-male
 - name: 6 x Female-to-female jumper leads
   img: jumper-female-to-female
