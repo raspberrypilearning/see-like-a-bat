@@ -1,10 +1,10 @@
 - name: Ultrasonic distance sensor
   img: ultrasonic-distance-sensor
-- name: Vibration Motor
+- name: Vibration motor
   img: vibration-motor
-- name: 1 1.2kΩ Resistor (or other - see worksheet)
+- name: 1 1.2kΩ resistor (or other - see worksheet)
   img: resistor-1k2
-- name: 1 2.2kΩ Resistor (or other - see worksheet)
+- name: 1 2.2kΩ resistor (or other - see worksheet)
   img: resistor-2k2
 - name: 1 x Solderless breadboard
   img: breadboard
