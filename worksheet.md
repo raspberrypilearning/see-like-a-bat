@@ -174,15 +174,15 @@ Try typing it when your hand is close to and far from the distance sensor. You s
 
 There's a simple formula for calculating the distance the sensor is from an object. You can start off with the speed equation:
 
-	![speed](images/speed.png)
+![speed](images/speed.png)
 
 This can be rearranged to make:
 
-	![distance](images/distance.png)
+![distance](images/distance.png)
 
 But you need to remember that as the sound has to travel to the object and back again, we need to divide the calculated distance by 2. Therefore:
 
-	![distance final](images/distance2.png)
+![distance final](images/distance2.png)
 
 The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-2</sup>.
 
