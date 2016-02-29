@@ -28,9 +28,9 @@ In the second section of this worksheet, you're going to incorporate your device
 
 This wiring diagram may help you:
 
-	![pizero wiring](images/See_Like_A_Bat_Diagram_7.png)
+![pizero wiring](images/See_Like_A_Bat_Diagram_7.png)
 
-1. Run your `bat.py` script to test that everything is working correctly. If it's not working as expected, have a look at the debugging section in the [previous worksheet](worksheet.md).
+Run your `bat.py` script to test that everything is working correctly. If it's not working as expected, have a look at the debugging section in the [previous worksheet](worksheet.md).
 
 ## Making it wearable
 
