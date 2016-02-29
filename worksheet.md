@@ -106,7 +106,7 @@ The diagram below shows you the complete setup:
 
 ![breadboard UDS](images/See_Like_A_Bat_Diagram_5.png)
 
-## Testing the Ultrasonic Distance Sensor
+## Testing the UDS
 
 You now need to make sure the UDS is working correctly. You'll need a little bit of Python 3 code to do this, so open up IDLE and create a new file called `bat.py`.
 
@@ -126,7 +126,7 @@ You now need to make sure the UDS is working correctly. You'll need a little bit
     sleep(2)
 	```
 
-The `sleep(2)` is there to let the sensor settle itself when the program starts.
+	The `sleep(2)` is there to let the sensor settle itself when the program starts.
 
 1. You can create a function to send and receive a pulse next. The first thing to do is set the trigger pin to send out a burst of ultrasound for 10μs:
 
@@ -232,13 +232,13 @@ To test everything is working, we can add an infinite loop at the bottom of the 
 		print(distance)
 
     ```
-1. Run your code and you should see a stream of numbers, showing you the distance from the sensor in metres. Move your hand closer to and further from the distance sensor.
+Run your code and you should see a stream of numbers, showing you the distance from the sensor in metres. Move your hand closer to and further from the distance sensor.
 
 ## Adding the Vibration motor
 
 You can now add your vibration motor to GPIO 14 and a ground pin:
 
-	![vibro and UDS](images/See_Like_A_Bat_Diagram_6.png)
+![vibro and UDS](images/See_Like_A_Bat_Diagram_6.png)
 
 1. You'll want to drive the motor using Pulse Width Modulation (PWM); this will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14:
 
