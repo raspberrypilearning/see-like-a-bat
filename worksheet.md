@@ -197,7 +197,7 @@ We can write a simple Python function to calculate this for us:
 		
 To test everything is working, we can add an infinite loop at the bottom of the script. Your full code listing should now look like this:
 
-	```
+	```python
 	from gpiozero import InputDevice, OutputDevice
 	from time import sleep, time
 
