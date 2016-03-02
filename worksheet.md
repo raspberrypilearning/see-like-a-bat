@@ -184,7 +184,7 @@ But you need to remember that as the sound has to travel to the object and back 
 
 ![distance final](images/distance2.png)
 
-The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-2</sup>.
+The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-1</sup>.
 
 We can write a simple Python function to calculate this for us:
 
