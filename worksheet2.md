@@ -13,7 +13,7 @@ In the second section of this worksheet, you're going to incorporate your device
     ![t join](images/t_join.jpg)
 
 	1. The lead that joins to the smaller of the two resistors needs to go into the Echo pin on the UDS.
-	1. The lead that branches out from between the sensors must go into GPIO 17
+	1. The lead that branches out from between the resistors must go into GPIO 17
 	1. The lead that comes out of the larger of the two resistors must go into a ground pin on the Raspberry Pi.
 	1. All the other connections are the same as the previous setup.
 
