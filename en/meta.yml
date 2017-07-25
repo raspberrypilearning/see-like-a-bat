@@ -1,0 +1,34 @@
+---
+title: See like a bat
+hero_image: images/banner.png
+description: In this resource you will make an echolocation device using your Raspberry
+  Pi
+original_url: https://raspberrypi.org/learning/see-like-a-bat
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: See like a bat
+- title: Adding flying leads to the vibration motor
+- title: Testing the vibration motor
+- title: How an ultrasonic distance sensor (UDS) works
+- title: Potential dividers
+- title: Wiring the UDS
+- title: Testing the UDS
+- title: Calculating the distance
+- title: Adding the Vibration motor
+- title: Debugging your script
+- title: Taking it further
+- title: See like a bat
+- title: The first step
+- title: Making it wearable
+- title: What next?
+
