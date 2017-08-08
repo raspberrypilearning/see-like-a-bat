@@ -1,20 +1,28 @@
-## How an ultrasonic distance sensor (UDS) works
+## Potential dividers
 
-An ultrasonic distance sensor (UDS) works using ultrasound. This is sound with a frequency so high that humans are unable to hear it. Bats and dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
+A potential divider can split a voltage into two smaller voltages. It does this by using resistors. Look at the diagram below. It shows a single resistor connected to 5V. The voltage across the resistor is 5V:
 
-The ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
+![single-resistor](images/See_Like_A_Bat_Diagram_2.png)
 
-![uds](images/Ultrasonic_Distance_Sensor.png)
+Now look at the diagram below. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two:
 
-By knowing the time between the outgoing burst and returning echo, and the speed of sound, you can calculate how far an object is away from the sensor.
+![same-resistor](images/See_Like_A_Bat_Diagram_3.png)
 
-A UDS has 4 pins:
+By altering the resistors, we can tailor the voltage across any one of them to be anything we like. Here you can see that we have split the voltage to give us almost exactly 3.3V:
 
-- Vcc is the pin that powers the device. It needs 5V to work.
-2. Trig is the pin that sends out the burst. It can be triggered using 3.3V.
-3. Echo is the pin that outputs when the reflected sound is received. It outputs at 5V.
-4. Gnd is the ground pin, used to complete the circuit.
+![divider](images/See_Like_A_Bat_Diagram_4.png)
 
+To work out the resistors you need, you can use the code below, or you can just use the resistances in the rest of this guide.
 
-Here we have a problem. The echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So in order not to fry the Pi, you're going to have to reduce that output voltage.
+```python
+R1 = 1200 # The smaller of the two resistors (alter this)
+Vout = 3.3 # The voltage you are trying to achieve (always 3.3)
+Vin = 5 # The input voltage (always 5)
+
+R2 = (Vout * R1) / (Vin - Vout) 
+
+print('The resistor you need is approximately',R2)
+```
+
+The resistor needed is only a rough guide. Remember, we actually only need a voltage above 1.8V to get a logical high on a GPIO pin.
 

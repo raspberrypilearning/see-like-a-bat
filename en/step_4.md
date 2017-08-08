@@ -1,24 +1,18 @@
-## Adding flying leads to the vibration motor
+## Testing the vibration motor
 
-The chances are that the vibration motor you have purchased (or scavenged) will have a pair of very short leads running from it. So the first thing you need to do is to attach some longer leads. This is usually easiest to carry out using a soldering iron, although you may get away with twisting the wires together and securing them with lots of insulating tape.
+You're now going to need to test your soldering (or twisting).
 
-- Take your vibration motor and secure it in place.
+- Twist the free ends of the multi-core wire so they become fairly rigid.
 
-	![vibration motor](images/vibration_motor.png)
+- Insert these ends into female-to-female jumper leads.
 
-- Use the tip of your soldering iron to heat up the ends of the leads, and then apply a little solder to both leads so they become coated in it. This is known as tinning.
+- Place the red lead onto the 3V3 output on your Raspberry Pi.
 
-	![vibration motor](images/vibration_motor2.png)
+- Place the black lead onto any ground pin.
 
-- Take about 60cm of red and black multi-core wire, and strip the insulating plastic from the ends of each.
+	![testing vibro](images/See_Like_A_Bat_Diagram_1.png)
 
-- Now tin the ends of your multi-core wire.
+It's important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors 	should never be attached directly to the pins on your Raspberry Pi, and should instead be attached to a motor driver or a transistor.
 
-- Secure your vibration motor once again, then touch the leads to the multi-core wire and apply a little heat to melt the solder they are tinned with. They should join together and form a secure bond.
-
-	![vibration motor](images/vibration_motor3.png)
-
-- Use some insulating tape or heat-shrink to wrap both wires.
-
-	![vibration motor](images/vibration_motor_photo.jpg)
+The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
 

@@ -16,7 +16,6 @@ site_areas: ''
 steps:
 - title: Introduction
 - title: What you will need
-- title: See like a bat
 - title: Adding flying leads to the vibration motor
 - title: Testing the vibration motor
 - title: How an ultrasonic distance sensor (UDS) works

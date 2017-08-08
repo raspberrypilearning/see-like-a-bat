@@ -1,54 +1,49 @@
-## Adding the Vibration motor
+## Debugging your script
 
-You can now add your vibration motor to GPIO 14 and a ground pin:
+There are a few reasons you might encounter errors with your script:
 
-![vibro and UDS](images/See_Like_A_Bat_Diagram_6.png)
-
-- You'll want to drive the motor using Pulse Width Modulation (PWM); this will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14:
+- The `get_pulse_time` function can occasionally fail due to problems with the cycle of trigger and echo on the ultrasonic distance sensor. You might like to change it to handle these issues, by using a `try/except` to catch either of the variables not being stored:
 
 	```python
-	from gpiozero import InputDevice, OutputDevice, PWMOutputDevice
-	from time import sleep, time
+	def get_pulse_time():
+		trig.on()
+		sleep(0.00001)
+		trig.off()
 
-	trig = OutputDevice(4)
-	echo = InputDevice(17)
-	motor = PWMOutputDevice(14)
+		while echo.is_active == False:
+			pulse_start = time()
 
-	sleep(2)
+		while echo.is_active == True:
+			pulse_end = time()
 
+		sleep(0.06)
+
+		try:
+			return pulse_end - pulse_start
+		except:
+			return 0.02
     ```
 
-- A `PWMOutputDevice` needs a floating point number between 0 and 1, so you need to remap the distance to a value between 0 and 1. At a maximum of 4m you want a value of 0, while at a distance of 2cm you want a value of 1. You can remap the maximum and minimum distances to minimum and maximum values using the equation below:
-
-	![equation1](images/equation1.png)
-
-- Now we can plug in the maximum and minimums:
-
-   ![equation2](images/equation2.png)
-
-- And finally simplify the equation a little:
-
-   ![equation3](images/equation3.png)
-
-- Turning this into a Python function you get:
+- The maximum range on the UDS might not reach 4m. The one used in writing this resource never went beyond 2m. You can alter the `calculate_vibration` function to use a different maximum if you like. For instance:
 
 	```python
 	def calculate_vibration(distance):
-		vibration = (((distance - 0.02) * -1) / (4 - 0.02)) + 1
+		vibration = (((distance - 0.02) * -1) / (2 - 0.02)) + 1
+		print(vibration)
 		return vibration
-
 	```
 
-- Finally, you can alter your `while` loop to drive the motor:
+- Occasionally, a number that the PWMOutputDevice can't handle might be returned by the `calculate_vibration` function. Another `try/except` in the final loop will handle this:
 
-	```python
-	while True:
-		duration = get_pulse_time()
-		distance = calculate_distance(duration)
-		vibration = calculate_vibration(distance)
-		motor.value = vibration
+   ```python
+   while True:
+	   duration = get_pulse_time()
+	   distance = calculate_distance(duration)
+	   vibration = calculate_vibration(distance)
+	   try:
+		   motor.value = vibration
+	   except:
+		   pass
 
-	```
-	
-Run the code and move your hand closer to and further away from the sensor. The motor should vibrate according to the distance your hand is away from it.
+   ``` 
 

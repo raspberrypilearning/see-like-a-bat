@@ -1,49 +1,30 @@
-## Debugging your script
+## Making it more durable
 
-There are a few reasons you might encounter errors with your script:
+- The first thing to do is to solder the pair of resistors together, and then add female jumper leads to each end of the pair. Add tape or heat-shrink to secure and insulate the joins:
 
-- The `get_pulse_time` function can occasionally fail due to problems with the cycle of trigger and echo on the ultrasonic distance sensor. You might like to change it to handle these issues, by using a `try/except` to catch either of the variables not being stored:
+	![joined resistors](images/joined_resistors.jpg)
 
-	```python
-	def get_pulse_time():
-		trig.on()
-		sleep(0.00001)
-		trig.off()
+- Next, add a third female header lead to the join between the two resistors. This can then be taped up as well:
 
-		while echo.is_active == False:
-			pulse_start = time()
+    ![t join](images/t_join.jpg)
 
-		while echo.is_active == True:
-			pulse_end = time()
+	1. The lead that joins to the smaller of the two resistors needs to go into the Echo pin on the UDS.
+	1. The lead that branches out from between the resistors must go into GPIO 17
+	1. The lead that comes out of the larger of the two resistors must go into a ground pin on the Raspberry Pi.
+	1. All the other connections are the same as the previous setup.
 
-		sleep(0.06)
 
-		try:
-			return pulse_end - pulse_start
-		except:
-			return 0.02
-    ```
+- Header leads also need to be attached to the vibration motor:
 
-- The maximum range on the UDS might not reach 4m. The one used in writing this resource never went beyond 2m. You can alter the `calculate_vibration` function to use a different maximum if you like. For instance:
+    ![vibro with headers](images/vibration_motor_with_jumpers.jpg)
 
-	```python
-	def calculate_vibration(distance):
-		vibration = (((distance - 0.02) * -1) / (2 - 0.02)) + 1
-		print(vibration)
-		return vibration
-	```
+- Lastly, you can connect it all to either your Raspberry Pi or, even better, to a Pi Zero:
 
-- Occasionally, a number that the PWMOutputDevice can't handle might be returned by the `calculate_vibration` function. Another `try/except` in the final loop will handle this:
+	![pizero setup](images/pizero_setup.jpg)
 
-   ```python
-   while True:
-	   duration = get_pulse_time()
-	   distance = calculate_distance(duration)
-	   vibration = calculate_vibration(distance)
-	   try:
-		   motor.value = vibration
-	   except:
-		   pass
+This wiring diagram may help you:
 
-   ``` 
+![pizero wiring](images/See_Like_A_Bat_Diagram_7.png)
+
+Run your `bat.py` script to test that everything is working correctly. If it's not working as expected, have a look at the debugging section in the [previous worksheet](worksheet.md).
 

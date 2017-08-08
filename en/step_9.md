@@ -1,64 +1,63 @@
-## Testing the UDS
+## Calculating the distance
 
-You now need to make sure the UDS is working correctly. You'll need a little bit of Python 3 code to do this, so open up IDLE and create a new file called `bat.py`.
+There's a simple formula for calculating the distance the sensor is from an object. You can start off with the speed equation:
 
-- You're going to use GPIO Zero to code this, but the UDS isn't in the library yet. Not to worry though: you can use the default InputDevice and OutputDevice instead:
+![speed](images/speed.png)
 
-	```python
-	from gpiozero import InputDevice, OutputDevice
-	from time import sleep, time
-	```
+This can be rearranged to make:
 
-- Next, you can set up the trigger and echo pins of the distance sensor:
+![distance](images/distance.png)
 
-	```python
-	trig = OutputDevice(4)
-	echo = InputDevice(17)
+But you need to remember that as the sound has to travel to the object and back again, we need to divide the calculated distance by 2. Therefore:
 
-    sleep(2)
-	```
+![distance final](images/distance2.png)
 
-	The `sleep(2)` is there to let the sensor settle itself when the program starts.
+The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-1</sup>.
 
-- You can create a function to send and receive a pulse next. The first thing to do is set the trigger pin to send out a burst of ultrasound for 10μs:
+We can write a simple Python function to calculate this for us:
 
-	```python
-	def get_pulse_time():
-	   trig.on()
-	   sleep(0.00001)
-	   trig.off()
-	```
-	
-- As soon as the ultrasonic sensor has sent out a burst of sound, the echo pin is set to `high`. You can use a `while` loop to detect when this happens and then record the current time:
+```python
+def calculate_distance(duration):
+    speed = 343
+    distance = speed * duration / 2 # calculate distance in metres
+    return distance
+```
+		
+To test everything is working, we can add an infinite loop at the bottom of the script. Your full code listing should now look like this:
 
-	```python
-		while echo.is_active == False:
-			pulse_start = time()
+```python
+from gpiozero import InputDevice, OutputDevice
+from time import sleep, time
 
-	```
+trig = OutputDevice(4)
+echo = InputDevice(17)
 
-- When an echo is received, the echo pin is set to `low`. Another `while` loop will be able to record the time at which it happens:
+sleep(2)
 
-	```python
-		while echo.is_active == True:
-			pulse_end = time()
+def get_pulse_time():
+    trig.on()
+   	sleep(0.00001)
+	trig.off()
 
-	```
+	while echo.is_active == False:
+		pulse_start = time()
 
-- Next, you need to let the ultrasonic sleep for a little bit, and then return the length of time it took for the pulse to be sent and received:
+	while echo.is_active == True:
+		pulse_end = time()
 
-	```python
-		sleep(0.06)
+	sleep(0.06)
 
-		return pulse_end - pulse_start
-	```
-	
-- To finish off you can test the program by running it and then typing the following in the interpreter:
+	return pulse_end - pulse_start
 
-	```python
-	print(get_pulse_time())
+def calculate_distance(duration):
+	speed = 343
+	distance = speed * duration / 2
+	return distance
 
-	```
-
-Try typing it when your hand is close to and far from the distance sensor. You should get smaller values as your hand approaches the sensor.
+while True:
+	duration = get_pulse_time()
+	distance = calculate_distance(duration)
+	print(distance)
+```
+Run your code and you should see a stream of numbers, showing you the distance from the sensor in metres. Move your hand closer to and further from the distance sensor.
 

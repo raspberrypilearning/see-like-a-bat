@@ -1,28 +1,14 @@
-## Potential dividers
+## Wiring the UDS
 
-A potential divider can split a voltage into two smaller voltages. It does this by using resistors. Look at the diagram below. It shows a single resistor connected to 5V. The voltage across the resistor is 5V:
+The next stage is to set up and test the UDS. This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
 
-![single-resistor](images/See_Like_A_Bat_Diagram_2.png)
+- Start by connecting the 5V pin on the Pi into the VCC pin on the UDS.
+- The Trig pin on the UDS can go straight into GPIO 4.
+- The Echo pin on the UDS needs to go to your first resistor of the potential divider.
+- The output of the first resistor of the potential divider needs to go into GPIO 17.
+- The Gnd from the UDS can go into any ground pin on the Raspberry Pi.
 
-Now look at the diagram below. By using two resistors, the voltage can be split. As both resistors are the same, the voltage is split equally between the two:
+The diagram below shows you the complete setup:
 
-![same-resistor](images/See_Like_A_Bat_Diagram_3.png)
-
-By altering the resistors, we can tailor the voltage across any one of them to be anything we like. Here you can see that we have split the voltage to give us almost exactly 3.3V:
-
-![divider](images/See_Like_A_Bat_Diagram_4.png)
-
-To work out the resistors you need, you can use the code below, or you can just use the resistances in the rest of this guide.
-
-```python
-R1 = 1200 # The smaller of the two resistors (alter this)
-Vout = 3.3 # The voltage you are trying to achieve (always 3.3)
-Vin = 5 # The input voltage (always 5)
-
-R2 = (Vout * R1) / (Vin - Vout) 
-
-print('The resistor you need is approximately',R2)
-```
-
-The resistor needed is only a rough guide. Remember, we actually only need a voltage above 1.8V to get a logical high on a GPIO pin.
+![breadboard UDS](images/See_Like_A_Bat_Diagram_5.png)
 

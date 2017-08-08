@@ -1,63 +1,54 @@
-## Calculating the distance
+## Adding the Vibration motor
 
-There's a simple formula for calculating the distance the sensor is from an object. You can start off with the speed equation:
+You can now add your vibration motor to GPIO 14 and a ground pin:
 
-![speed](images/speed.png)
+![vibro and UDS](images/See_Like_A_Bat_Diagram_6.png)
 
-This can be rearranged to make:
+- You'll want to drive the motor using Pulse Width Modulation (PWM); this will send pulses of current to the motor. The faster the pulse, the quicker the motor will vibrate. Alter your code to use the `PWMOutputDevice` from `gpiozero` and set up the motor on GPIO 14:
 
-![distance](images/distance.png)
+	```python
+	from gpiozero import InputDevice, OutputDevice, PWMOutputDevice
+	from time import sleep, time
 
-But you need to remember that as the sound has to travel to the object and back again, we need to divide the calculated distance by 2. Therefore:
+	trig = OutputDevice(4)
+	echo = InputDevice(17)
+	motor = PWMOutputDevice(14)
 
-![distance final](images/distance2.png)
+	sleep(2)
 
-The speed of sound in air will vary depending on the temperature and air pressure, but it tends to hover around 343ms<sup>-1</sup>.
+    ```
 
-We can write a simple Python function to calculate this for us:
+- A `PWMOutputDevice` needs a floating point number between 0 and 1, so you need to remap the distance to a value between 0 and 1. At a maximum of 4m you want a value of 0, while at a distance of 2cm you want a value of 1. You can remap the maximum and minimum distances to minimum and maximum values using the equation below:
 
-```python
-def calculate_distance(duration):
-    speed = 343
-    distance = speed * duration / 2 # calculate distance in metres
-    return distance
-```
-		
-To test everything is working, we can add an infinite loop at the bottom of the script. Your full code listing should now look like this:
+	![equation1](images/equation1.png)
 
-```python
-from gpiozero import InputDevice, OutputDevice
-from time import sleep, time
+- Now we can plug in the maximum and minimums:
 
-trig = OutputDevice(4)
-echo = InputDevice(17)
+   ![equation2](images/equation2.png)
 
-sleep(2)
+- And finally simplify the equation a little:
 
-def get_pulse_time():
-    trig.on()
-   	sleep(0.00001)
-	trig.off()
+   ![equation3](images/equation3.png)
 
-	while echo.is_active == False:
-		pulse_start = time()
+- Turning this into a Python function you get:
 
-	while echo.is_active == True:
-		pulse_end = time()
+	```python
+	def calculate_vibration(distance):
+		vibration = (((distance - 0.02) * -1) / (4 - 0.02)) + 1
+		return vibration
 
-	sleep(0.06)
+	```
 
-	return pulse_end - pulse_start
+- Finally, you can alter your `while` loop to drive the motor:
 
-def calculate_distance(duration):
-	speed = 343
-	distance = speed * duration / 2
-	return distance
+	```python
+	while True:
+		duration = get_pulse_time()
+		distance = calculate_distance(duration)
+		vibration = calculate_vibration(distance)
+		motor.value = vibration
 
-while True:
-	duration = get_pulse_time()
-	distance = calculate_distance(duration)
-	print(distance)
-```
-Run your code and you should see a stream of numbers, showing you the distance from the sensor in metres. Move your hand closer to and further from the distance sensor.
+	```
+	
+Run the code and move your hand closer to and further away from the sensor. The motor should vibrate according to the distance your hand is away from it.
 
