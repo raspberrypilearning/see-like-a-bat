@@ -4,7 +4,7 @@ hero_image: images/banner.png
 description: In this resource you will make an echolocation device using your Raspberry
 Pi
 original_url: https://raspberrypi.org/learning/see-like-a-bat
-theme: red
+theme: violet
 duration: 2
 listed: true
 ingredient: false
