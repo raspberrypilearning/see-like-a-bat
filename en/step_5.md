@@ -10,7 +10,7 @@ By knowing the time between the outgoing burst and returning echo, and the speed
 
 A UDS has 4 pins:
 
-- Vcc is the pin that powers the device. It needs 5V to work.
+1. Vcc is the pin that powers the device. It needs 5V to work.
 2. Trig is the pin that sends out the burst. It can be triggered using 3.3V.
 3. Echo is the pin that outputs when the reflected sound is received. It outputs at 5V.
 4. Gnd is the ground pin, used to complete the circuit.
