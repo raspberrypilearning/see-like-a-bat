@@ -1,8 +1,8 @@
-## Debugging your script
+## Αντιμετώπιση σφαλμάτων του σεναρίου σου
 
-There are a few reasons you might encounter errors with your script:
+Υπάρχουν μερικοί λόγοι για τους οποίους ενδέχεται να αντιμετωπίσεις σφάλματα με το σενάριό σου:
 
-- The `get_pulse_time` function can occasionally fail due to problems with the cycle of trigger and echo on the ultrasonic distance sensor. You might like to change it to handle these issues, by using a `try/except` to catch either of the variables not being stored:
+- Η συνάρτηση ` get_pulse_time ` μπορεί να αποτύχει περιστασιακά λόγω προβλημάτων με τον κύκλο σκανδαλισμού και ηχούς στον υπερηχητικό αισθητήρα απόστασης. Ίσως θελήσεις να το αλλάξεις για να χειριστείς αυτά τα ζητήματα, χρησιμοποιώντας ένα ` try / exception ` για να πιάσεις μία από τις μεταβλητές που δεν αποθηκεύονται:
 
     ```python
     def get_pulse_time():
@@ -24,7 +24,7 @@ There are a few reasons you might encounter errors with your script:
             return 0.02
     ```
 
-- The maximum range on the UDS might not reach 4m. The one used in writing this resource never went beyond 2m. You can alter the `calculate_vibration` function to use a different maximum if you like. For instance:
+- Η μέγιστη εμβέλεια στον UDS ενδέχεται να μην φθάνει τα 4 μέτρα. Αυτός που χρησιμοποιήθηκε για τη σύνταξη αυτού του πόρου δεν ξεπέρασε τα 2 μέτρα. Μπορείς να αλλάξεις την συνάρτηση ` calculate_vibration ` για να χρησιμοποιήσεις διαφορετικό μέγιστο αν θέλεις. Για παράδειγμα:
 
     ```python
     def calculate_vibration(distance):
@@ -33,7 +33,7 @@ There are a few reasons you might encounter errors with your script:
         return vibration
     ```
 
-- Occasionally, a number that the PWMOutputDevice can't handle might be returned by the `calculate_vibration` function. Another `try/except` in the final loop will handle this:
+- Περιστασιακά, ένας αριθμός ο οποίος δεν μπορεί να χειριστεί το PWMOutputDevice μπορεί να επιστραφεί από την συνάρτηση ` calculate_vibration `. Άλλο ένα `try/except` στον τελικό βρόχο θα χειριστεί αυτό:
 
    ```python
    while True:
