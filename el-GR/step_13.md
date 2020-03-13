@@ -1,18 +1,18 @@
-## Making it wearable
+## Κάνοντάς το φορετό
 
-To finish off you can make your device into a wearable.
+Για να τελειώσεις, μπορείς να κάνεις τη συσκευή σου φορετή.
 
-- Sew or glue the UDS to the palm side of a glove:
+- Ράψε ή κόλλησε το UDS στην μέσα μεριά ενός γαντιού:
 
-    ![ultra and glove](images/glove_uds.jpg)
+    ![ultra και γάντι](images/glove_uds.jpg)
 
-- Sew or glue the vibration motor to the inside of the glove, so it rests on the palm:
+- Ράψε ή κόλλησε το μοτέρ δονήσεων στο εσωτερικό του γαντιού, έτσι ώστε να εφάπτεται στην παλάμη:
 
-    ![motor and glove](images/glove_motor.jpg)
+    ![κινητήρας και γάντι](images/glove_motor.jpg)
 
-- Place the Raspberry Pi or Pi Zero on your wrist, along with a battery, and secure it in place with a wrist band.
+- Τοποθέτησε το Raspberry Pi ή Pi Zero στον καρπό σου, μαζί με μια μπαταρία, και ασφάλισέ το με μια ζώνη καρπού.
 
-    ![modelled](images/modelled.png)
+    ![μοντέλο](images/modelled.png)
 
-Now you should be able to hold up your hand and detect objects that come close to you, or that you come close to.
+Τώρα θα πρέπει να είσαι σε θέση να κινήσεις το χέρι σου και να ανιχνεύσεις αντικείμενα που έρχονται κοντά σου ή ότι άλλο πλησιάζεις.
 
