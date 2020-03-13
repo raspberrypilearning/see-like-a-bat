@@ -1,0 +1,33 @@
+---
+title: Δες σαν νυχτερίδα
+hero_image: images/banner.png
+description: Σε αυτόν τον πόρο θα δημιουργήσεις μια συσκευή ηχοεντοπισμού χρησιμοποιώντας το Raspberry Pi
+original_url: https://raspberrypi.org/learning/see-like-a-bat
+theme: violet
+duration: 2
+listed: true
+ingredient: false
+copyedit: true
+curriculum: 3, design-0, programming-3, phys-comp-3, manufacture-0, community-0
+interests: animals, wearable-technology
+technologies: raspberry-pi, electronic-components, python
+site_areas: projects
+hardware: raspberry-pi, electronic-components
+software: python
+version: 3
+last_tested: 2017-01-01
+steps:
+  - title: Εισαγωγή
+  - title: Τι θα χρειαστείς
+  - title: Προσθήκη ιπτάμενων αγωγών στον κινητήρα κραδασμών
+  - title: Δοκιμή του κινητήρα κραδασμών
+  - title: Πώς λειτουργεί ένας υπερηχητικός αισθητήρας απόστασης (UDS)
+  - title: Διαιρέτες τάσης
+  - title: Καλωδίωση του UDS
+  - title: Δοκιμή του UDS
+  - title: Υπολογισμός της απόστασης
+  - title: Προσθήκη του κινητήρα δόνησης
+  - title: Αντιμετώπιση σφαλμάτων του σεναρίου σου
+  - title: Κάνοντάς το ανθεκτικό
+  - title: Κάνοντάς το φορετό
+  - title: Και τώρα;
