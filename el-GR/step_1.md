@@ -1,18 +1,18 @@
-## What you will make
-In this resource you will make an echolocation device using your Raspberry Pi, which can be worn and which will help you see like a bat.
+## Τι θα φτιάξεις
+Σε αυτόν τον πόρο θα φτιάξεις μια συσκευή ηχοεντοπισμού χρησιμοποιώντας το Raspberry Pi, το οποίο μπορεί να φορεθεί και το οποίο θα σε βοηθήσει να δεις σαν νυχτερίδα.
 
-## What you will learn
-By creating an echolocation device with your Raspberry Pi, you will learn:
+## Τι θα μάθεις
+Δημιουργώντας μια συσκευή ηχοεντοπισμού με το Raspberry Pi, θα μάθεις:
 
-- How to set up a potential divider
-- How to set up an ultrasonic distance sensor
-- How to calculate range from ultrasonic pulses
-- How to use Pulse Width Modulation (PWM) to control a small motor
-- How to use functions to solve abstract mathematical problems
+- Πώς να ρυθμίσεις έναν ενδεχόμενο διαιρέτη
+- Πώς να ρυθμίσεις έναν υπερηχητικό αισθητήρα απόστασης
+- Πώς να υπολογίσεις το εύρος από παλμούς υπερήχων
+- Πώς να χρησιμοποιήσεις τη διαμόρφωση εύρους παλμού (Παλμο-κωδική διαμόρφωση) για τον έλεγχο ενός μικρού κινητήρα
+- Πώς να χρησιμοποιήσεις συναρτήσεις για την επίλυση αφηρημένων μαθηματικών προβλημάτων
 
-This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
+Αυτό το έργο καλύπτει στοιχεία από τις ακόλουθες πτυχές του [Προγράμματος Μαθημάτων Ψηφιακής Δημιουργίας του Raspberry Pi](https://www.raspberrypi.org/curriculum/):
 
-- [Combine programming constructs to solve a problem](https://www.raspberrypi.org/curriculum/programming/builder)
-- [Combine inputs and/or outputs to create projects or solve a problem](https://www.raspberrypi.org/curriculum/physical-computing/builder)
-- [Use manufacturing techniques and tools to create prototype projects](https://www.raspberrypi.org/curriculum/manufacture/builder)
+- [Συνδύασε δομές προγραμματισμού για να λύσεις ένα πρόβλημα](https://www.raspberrypi.org/curriculum/programming/builder)
+- [Συνδύασε εισόδους και / ή εξόδους για να δημιουργήσεις έργα ή να λύσεις ένα πρόβλημα](https://www.raspberrypi.org/curriculum/physical-computing/builder)
+- [Χρησιμοποίησε τεχνικές κατασκευής και εργαλεία για τη δημιουργία πρωτότυπων έργων](https://www.raspberrypi.org/curriculum/manufacture/builder)
 
