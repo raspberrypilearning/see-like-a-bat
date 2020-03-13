@@ -1,20 +1,20 @@
-## How an ultrasonic distance sensor (UDS) works
+## Πώς λειτουργεί ένας υπερηχητικός αισθητήρας απόστασης (UDS)
 
-An ultrasonic distance sensor (UDS) works using ultrasound. This is sound with a frequency so high that humans are unable to hear it. Bats and dolphins would have no problems though, as they have evolved to be able to use sounds of this frequency.
+Ένας υπερηχητικός αισθητήρας απόστασης (UDS) λειτουργεί με υπερήχους. Αυτοί είναι ήχοι με μια συχνότητα τόσο υψηλή ώστε οι άνθρωποι δεν μπορούν να τους ακούσουν. Οι νυχτερίδες και τα δελφίνια δεν θα είχαν κανένα πρόβλημα, καθώς έχουν εξελιχθεί για να μπορούν να χρησιμοποιούν ήχους αυτής της συχνότητας.
 
-The ultrasonic distance sensor works by sending out a burst of ultrasound. This sound will travel through air, but reflect back (echo) off hard surfaces. The sensor can detect the echo, when it returns.
+Ο υπερηχητικός αισθητήρας απόστασης λειτουργεί στέλλοντας μια ριπή υπερήχων. Αυτός ο ήχος θα ταξιδέψει μέσω του αέρα, αλλά θα αντανακλαστεί πίσω (echo) από σκληρές επιφάνειες. Ο αισθητήρας μπορεί να ανιχνεύσει την ηχώ, όταν επιστρέψει.
 
 ![uds](images/Ultrasonic_Distance_Sensor.png)
 
-By knowing the time between the outgoing burst and returning echo, and the speed of sound, you can calculate how far an object is away from the sensor.
+Γνωρίζοντας τον χρόνο μεταξύ της εξερχόμενης ριπής και της ηχούς επιστροφής και της ταχύτητας του ήχου, μπορείς να υπολογίσεις πόσο μακριά είναι ένα αντικείμενο από τον αισθητήρα.
 
-A UDS has 4 pins:
+Ένα UDS έχει 4 ακίδες:
 
-- Vcc is the pin that powers the device. It needs 5V to work.
+1. Vcc is the pin that powers the device. It needs 5V to work.
 2. Trig is the pin that sends out the burst. It can be triggered using 3.3V.
 3. Echo is the pin that outputs when the reflected sound is received. It outputs at 5V.
 4. Gnd is the ground pin, used to complete the circuit.
 
 
-Here we have a problem. The echo pin is going to output 5V, but your Raspberry Pi can only receive a maximum of 3.3V through any of the GPIO pins. So in order not to fry the Pi, you're going to have to reduce that output voltage.
+Εδώ έχουμε ένα πρόβλημα. Ο ακροδέκτης echo πρόκειται να δώσει έξοδο 5V, αλλά το Raspberry Pi σου μπορεί να λάβει μόνο το μέγιστο των 3.3V μέσω οποιουδήποτε από τους ακροδέκτες GPIO. Οπότε για να μην κάψεις το Pi, θα πρέπει να μειώσεις αυτή την τάση εξόδου.
 
