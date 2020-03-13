@@ -1,18 +1,18 @@
-## Testing the vibration motor
+## Δοκιμή του κινητήρα κραδασμών
 
-You're now going to need to test your soldering (or twisting).
+Θα πρέπει τώρα να δοκιμάσεις τις κολλήσεις (ή τη συστροφή) σας.
 
-- Twist the free ends of the multi-core wire so they become fairly rigid.
+- Περιστρέψτε τα ελεύθερα άκρα του πολύκλωνου σύρματος έτσι ώστε να γίνουν αρκετά άκαμπτα.
 
-- Insert these ends into female-to-female jumper leads.
+- Εισαγάγετε αυτά τα άκρα σε αγωγούς ζεύξης θηλυκού-θηλυκού.
 
-- Place the red lead onto the 3V3 output on your Raspberry Pi.
+- Τοποθετήσε το κόκκινο καλώδιο στην έξοδο 3V3 στο Raspberry Pi.
 
-- Place the black lead onto any ground pin.
+- Τοποθετήσε το μαύρο καλώδιο σε οποιαδήποτε ακίδα γείωσης.
 
-    ![testing vibro](images/See_Like_A_Bat_Diagram_1.png)
+    ![δοκιμάζοντας τις δονήσεις](images/See_Like_A_Bat_Diagram_1.png)
 
-It's important to note that you can only do this with this particular motor, as it has such a small current draw. Larger motors     should never be attached directly to the pins on your Raspberry Pi, and should instead be attached to a motor driver or a transistor.
+Είναι σημαντικό να σημειώσουμε ότι μπορείς να το κάνεις μόνο με αυτόν τον συγκεκριμένο κινητήρα, καθώς διαρρέεται από πολύ μικρό ρεύμα. Μεγαλύτεροι κινητήρες δεν θα πρέπει ποτέ να συνδέονται απευθείας με τις ακίδες του Raspberry Pi και, αντίθετα, πρέπει να συνδέονται με ένα τσίπ οδήγησης κινητήρα ή ένα τρανζίστορ.
 
-The motor should start vibrating, at which point you can disconnect it from your Raspberry Pi.
+Ο κινητήρας πρέπει να αρχίσει να δονείται, οπότε μπορείς να τον αποσυνδέσεις από το Raspberry Pi.
 
