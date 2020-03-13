@@ -1,14 +1,14 @@
-## Wiring the UDS
+## Καλωδίωση του UDS
 
-The next stage is to set up and test the UDS. This is best done with the Raspberry Pi switched off, as you're about to use 5V, and if you accidentally short the Pi, you might have issues.
+Το επόμενο στάδιο είναι η εγκατάσταση και δοκιμή του UDS. Αυτό γίνεται καλύτερα με το Raspberry Pi απενεργοποιημένο, καθώς είσαι έτοιμος να χρησιμοποιήσεις 5V, και εάν βραχυκυκλώσεις κατά λάθος το Pi, μπορεί να έχεις προβλήματα.
 
-- Start by connecting the 5V pin on the Pi into the VCC pin on the UDS.
-- The Trig pin on the UDS can go straight into GPIO 4.
-- The Echo pin on the UDS needs to go to your first resistor of the potential divider.
-- The output of the first resistor of the potential divider needs to go into GPIO 17.
-- The Gnd from the UDS can go into any ground pin on the Raspberry Pi.
+- Ξεκίνησε συνδέοντας τον ακροδέκτη 5V του Pi στον ακροδέκτη VCC του UDS.
+- Η ακίδα Trig του UDS μπορεί να πάει κατευθείαν στο GPIO 4.
+- Η ακίδα Echo στο UDS πρέπει να πάει στην πρώτη αντίσταση του διαιρέτη τάσης.
+- Η έξοδος του πρώτου αντιστάτη του διαιρέτη τάσης χρειάζεται να πάει στο GPIO 17.
+- Το Gnd από το UDS μπορεί να πάει σε οποιαδήποτε γείωση στο Raspberry Pi.
 
-The diagram below shows you the complete setup:
+Το παρακάτω διάγραμμα δείχνει την πλήρη ρύθμιση:
 
-![breadboard UDS](images/See_Like_A_Bat_Diagram_5.png)
+![ράστερ UDS](images/See_Like_A_Bat_Diagram_5.png)
 
