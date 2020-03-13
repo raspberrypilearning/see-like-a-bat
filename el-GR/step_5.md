@@ -10,10 +10,10 @@
 
 Ένα UDS έχει 4 ακίδες:
 
-1. Vcc is the pin that powers the device. It needs 5V to work.
-2. Trig is the pin that sends out the burst. It can be triggered using 3.3V.
-3. Echo is the pin that outputs when the reflected sound is received. It outputs at 5V.
-4. Gnd is the ground pin, used to complete the circuit.
+1. Vcc είναι ο ακροδέκτης που τροφοδοτεί τη συσκευή. Χρειάζεται 5V για να λειτουργήσει.
+2. Το Trig είναι ο ακροδέκτης που στέλνει την ριπή ήχου. Μπορεί να ενεργοποιηθεί χρησιμοποιώντας 3.3V.
+3. Echo είναι ο ακροδέκτης που δίνει σήμα εξόδου όταν λαμβάνεται ο ανακλώμενος ήχος. Βγάζει έξοδο 5V.
+4. Το Gnd είναι ο ακροδέκτης που χρησιμοποιείται για την γείωση του κυκλώματος.
 
 
 Εδώ έχουμε ένα πρόβλημα. Ο ακροδέκτης echo πρόκειται να δώσει έξοδο 5V, αλλά το Raspberry Pi σου μπορεί να λάβει μόνο το μέγιστο των 3.3V μέσω οποιουδήποτε από τους ακροδέκτες GPIO. Οπότε για να μην κάψεις το Pi, θα πρέπει να μειώσεις αυτή την τάση εξόδου.
