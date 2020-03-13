@@ -1,5 +1,5 @@
 from gpiozero import InputDevice, OutputDevice, PWMOutputDevice
-from time import sleep, time
+from time import sleep
 
 trig = OutputDevice(4)
 echo = InputDevice(17)
@@ -7,7 +7,7 @@ motor = PWMOutputDevice(14)
 
 sleep(2)
 
-def get_pulse_time():
+def get_pulse_time ():
     trig.on()
     sleep(0.00001)
     trig.off()
