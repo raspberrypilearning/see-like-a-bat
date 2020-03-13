@@ -9,10 +9,10 @@ listed: true
 ingredient: false
 copyedit: true
 curriculum: 3, design-0, programming-3, phys-comp-3, manufacture-0, community-0
-interests: ζώα, φορετή τεχνολογία
-technologies: raspberry-pi, ηλεκτρονικά εξαρτήματα, python
+interests: animals, wearable-technology
+technologies: raspberry-pi, electronic-components, python
 site_areas: projects
-hardware: raspberry-pi, ηλεκτρονικά εξαρτήματα
+hardware: raspberry-pi, electronic-components
 software: python
 version: 3
 last_tested: 2017-01-01
