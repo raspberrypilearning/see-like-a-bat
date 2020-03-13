@@ -1,8 +1,8 @@
-## What next?
+## Και τώρα;
 
-- Why not make a second UDS device, so that you can have a pair of gloves and have binocular bat vision?
+- Γιατί να μην δημιουργήσεις μια δεύτερη συσκευή UDS, ώστε να μπορείς να έχεις ένα ζευγάρι γάντια και να έχεις διόφθαλμη όραση νυχτερίδας;
 
-- Try playing around with the mathematics of turning distance into a vibration intensity. Can you make the device more sensitive at closer distances?
+- Δοκίμασε να παίξεις με τα μαθηματικά μετατροπής της απόστασης σε μια ένταση κραδασμών. Μπορείις να κάνεις τη συσκευή πιο ευαίσθητη σε πιο κοντινές αποστάσεις;
 
-- Why not sew a UDS into the collar of a jacket, so you can detect when someone is sneaking up on you from behind?
+- Γιατί να μην ράψεις ένα UDS στο περιλαίμιο ενός μπουφάν, έτσι ώστε να μπορείς να εντοπίσεις πότε κάποιος σε πλησιάζει από πίσω;
 
