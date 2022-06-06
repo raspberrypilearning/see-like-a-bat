@@ -20,9 +20,10 @@ last_tested: 2017-01-01
 steps:
 - title: Introduction
 - title: What you will need
-  completion: engaged
 - title: Adding flying leads to the vibration motor
 - title: Testing the vibration motor
+  completion:
+  - engaged
 - title: How an ultrasonic distance sensor (UDS) works
 - title: Potential dividers
 - title: Wiring the UDS
@@ -31,6 +32,7 @@ steps:
 - title: Adding the Vibration motor
 - title: Debugging your script
 - title: Making it durable
-  completion: internal
 - title: Making it wearable
+  completion:
+  - internal
 - title: What next?
