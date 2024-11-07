@@ -6,7 +6,7 @@ description: In this resource you will make an echolocation device using your Ra
 original_url: https://raspberrypi.org/learning/see-like-a-bat
 theme: violet
 duration: 2
-listed: true
+listed: false
 ingredient: false
 copyedit: true
 curriculum: 3, design-0, programming-3, phys-comp-3, manufacture-0, community-0
